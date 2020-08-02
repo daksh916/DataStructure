@@ -1,0 +1,50 @@
+class Result {
+
+    /*
+     * Complete the 'dynamicArray' function below.
+     *
+     * The function is expected to return an INTEGER_ARRAY.
+     * The function accepts following parameters:
+     *  1. INTEGER n
+     *  2. 2D_INTEGER_ARRAY queries
+     */
+
+    public static List<Integer> dynamicArray(int n, List<List<Integer>> queries) {
+    // Write your code here
+
+Scanner z= new Scanner(System.in);
+int lastAns=0,i,index,size,queryType,x,y;
+
+List<Integer> seq =new ArrayList<Integer>();
+List<List<Integer>> seqList = new ArrayList<List<Integer>>();
+
+for(i=0;i<n;i++)
+{
+seq= new ArrayList<Integer>();
+seqList.add(seq);
+}
+List<Integer> correct = new ArrayList<Integer>();
+for(List<Integer> q: queries)
+{
+queryType=q.get(0);
+x=q.get(1);
+y=q.get(2);
+if(queryType==1)
+{
+index= (x^lastAns)%n;
+seqList.get(index).add(y);
+}
+if(queryType==2)
+{
+index= (x^lastAns)%n;
+size=seqList.get(index).size();
+lastAns=seqList.get(index).get(y%size);
+correct.add(lastAns);
+}
+}
+return correct;
+}
+
+    
+
+}
