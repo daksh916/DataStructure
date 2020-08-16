@@ -1,0 +1,16 @@
+SinglyLinkedListNode current=head;
+        SinglyLinkedListNode node=new SinglyLinkedListNode(data);
+        if(head==null)
+        {
+            return node;
+        }
+        while(current.next!=null)
+        {
+            current=current.next;
+        }
+            current.next=node;
+            node.next=null;
+
+        
+        return head;
+      
