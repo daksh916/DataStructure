@@ -1,0 +1,16 @@
+ static int getNode(SinglyLinkedListNode head, int positionFromTail) {
+        SinglyLinkedListNode current=head;
+        int c=0;
+        while(head.next!=null)
+        {
+            head=head.next;
+            c++;
+            if(c>positionFromTail)
+            {
+                current=current.next;
+            }
+        }
+        return current.data;
+
+
+    }
