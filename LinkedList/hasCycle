@@ -1,0 +1,21 @@
+ static boolean hasCycle(SinglyLinkedListNode head) {
+         if (head == null){
+        return false;
+    }
+
+    SinglyLinkedListNode current= head;
+    SinglyLinkedListNode currentn = head;
+
+    while (currentn!= null && currentn.next != null){
+        current = current.next;
+        currentn= currentn.next.next;
+
+        if (current == currentn){
+            return true;
+        }
+    }
+
+    return false;
+
+
+    }
