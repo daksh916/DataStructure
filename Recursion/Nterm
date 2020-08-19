@@ -1,0 +1,20 @@
+public class Nterm {
+    int triangle(int n)
+    {
+        if(n==1)
+        {
+            return 1;
+        }
+        else
+        {
+            return(n+triangle(n-1));
+        }
+    }
+
+    public static void main(String[] args) {
+        Nterm obj=new Nterm();
+       int a= obj.triangle(4);
+        System.out.println(a);
+    }
+
+}
