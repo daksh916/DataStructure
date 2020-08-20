@@ -1,0 +1,33 @@
+public class FloodFill {
+    static void fill(int ab[][], int r, int c, int tofill, int prevfill) {
+        int rows = ab.length;
+        int col = ab[0].length;
+        if (r < 0 || r >= rows || c < 0 || c >= col) {
+            return;
+        }
+        if (ab[r][c] != prevfill) {
+            return;
+        }
+        ab[r][c]=tofill;
+        fill(ab, r - 1, c, tofill, prevfill);
+        fill(ab, r , c-1, tofill, prevfill);
+        fill(ab, r+1, c , tofill, prevfill);
+        fill(ab, r, c + 1, tofill, prevfill);
+
+    }
+
+
+    public static void main(String[] args) {
+        int a[][] = {{1, 1, 1, 1, 1, 1, 1, 1},
+                {1, 1, 1, 0, 0, 0, 0, 1},
+                {1, 1, 2, 3, 3, 3, 3, 3}};
+       fill(a,1,1,3,1);
+
+        for (int i = 0; i < a.length; i++) {
+            for (int j = 0; j < a[0].length; j++) {
+                System.out.print(a[i][j]);
+            }
+            System.out.println();
+        }
+    }
+}
