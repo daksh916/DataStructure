@@ -1,0 +1,21 @@
+import javax.swing.*;
+
+public class TowerOfHanoi {
+   static void tower(int disk,char s,char i,char d)
+   {
+       if(disk==1)
+       {
+           System.out.println(s+">>>>"+d);
+       }
+       else
+       {
+           tower(disk-1,s,d,i);
+           System.out.println(s+">>>>"+d);
+           tower(disk-1,i,s,d);
+       }
+   }
+
+    public static void main(String[] args) {
+        tower(3,'A','B','C');
+    }
+}
