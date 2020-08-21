@@ -1,0 +1,29 @@
+public class AnagramString {
+   void Anagram(String s,int l,int r)
+   {
+       if(l==r)
+       {
+           System.out.println(s);
+       }
+       for(int i=l;i<=r;i++)
+       {
+           s=interChange(s,l,i);
+           Anagram(s,l+1,r);
+           s=interChange(s,l,i);
+
+       }
+   }
+   String interChange(String s,int a,int b)
+   {
+       char array[]=s.toCharArray();
+       char temp=array[a];
+       array[a]=array[b];
+       array[b]=temp;
+       return String.valueOf(array);
+   }
+
+    public static void main(String[] args) {
+        AnagramString obj=new AnagramString();
+        obj.Anagram("abc",0,2);
+    }
+}
