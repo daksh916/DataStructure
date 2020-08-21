@@ -1,0 +1,36 @@
+public class MergeSort {
+    static void merge(int A[],int sizea,int B[],int sizeb,int C[])
+    {
+        int a=0, b=0, c=0;
+        while(a<sizea &&b<sizeb)
+        {
+            if(A[a]<B[b])
+            {
+                C[c++]=A[a++];
+            }
+            else
+            {
+                C[c++]=B[b++];
+            }
+        }
+        while(a<sizea)
+        {
+            C[c++]=A[a++];
+        }
+        while(b<sizeb)
+        {
+            C[c++]=B[b++];
+        }
+    }
+
+    public static void main(String[] args) {
+        int a[]={1,2,3,4};
+        int b[]={5,6,7,8,9,10};
+        int c[]=new int [10];
+        merge(a,4,b,6,c);
+        for (int i=0;i<10;i++)
+        {
+            System.out.println(c[i]);
+        }
+    }
+}
