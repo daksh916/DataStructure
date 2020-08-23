@@ -1,0 +1,31 @@
+public class ShellSort1 {
+    static void shell(int n,int arr[])
+    {
+        for(int gap=n/2;gap>=1;gap/=2)
+
+        {
+            for(int i=gap;i<n;i++)
+            {int temp=arr[i];
+            int j;
+                for ( j = i; j >= gap && arr[j - gap] > temp; j -= gap)
+                {
+                    arr[j] = arr[j - gap];
+                }
+                arr[j]=temp;
+                }
+            }
+        }
+
+
+
+    public static void main(String[] args) {
+        int arr[]={10,9,8,7,6,5,4,3,2,1};
+        shell(10,arr);
+        for(int i=0;i<10;i++)
+        {
+            System.out.println(arr[i]);
+        }
+
+
+    }
+}
