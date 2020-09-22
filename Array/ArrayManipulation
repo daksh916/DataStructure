@@ -1,7 +1,5 @@
 
 public class Solution {
-
-    // Complete the arrayManipulation function below.
     static long arrayManipulation(int n, int[][] queries) {
       long[] computation = new long[n];
 
