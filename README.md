@@ -4,3 +4,4 @@ AND Recurssion problems.
 LinkedList
 Arrays.
 Stacks
+All problems are from various platforms.
