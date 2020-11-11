@@ -1,0 +1,31 @@
+public static int kthSmallest(int[] arr, int l, int r, int k) 
+{ 
+    //Your code here
+   /* int min=arr[0];
+    int a[]=new int [k];
+    for(int j=0;j<k;j++)
+    {
+        for(int i=l;i<=r;i++)
+        {
+            if(arr[i]<min)
+            {
+                min=arr[i];
+            }
+        }
+        a[j]=min;
+        
+    }*/int temp=0;
+   for (int i = l; i <=r; i++) 
+        {
+            for (int j = i + 1; j <=r; j++) { 
+                if (arr[i] > arr[j]) 
+                {
+                    temp = arr[i];
+                    arr[i] = arr[j];
+                    arr[j] = temp;
+                }
+            }
+        }
+    return arr[k-1];
+    
+} 
