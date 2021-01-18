@@ -1,6 +1,6 @@
 public static int kthSmallest(int[] arr, int l, int r, int k) 
 { 
-    //Your code here
+    
    /* int min=arr[0];
     int a[]=new int [k];
     for(int j=0;j<k;j++)
